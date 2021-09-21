@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saveData(){
+            var id=parseInt(document.getElementById("ProdId").value);
+            var name=document.getElementById("prodname").value;
+
+
+            localStorage.setItem("prouductid",id);
+            localStorage.setItem("productname",name)
+
+
+        }
+    </script>
+   
+        
+</head>
+<body>
+   
+    
+    <form method="POST" action="your_action">
+      <!-- <form novalidate></form>  it is to make form not validate itself! -->
+        <fieldset>
+            <legend> Product Info</legend>
+        <table border="1">
+        <tr>
+        <td>Product Id</td>
+        <td><input type="number" id="ProdId"  required/></td>
+        <!-- ... snip ... -->
+        </tr>
+        <tr>
+            <td>Product name</td>
+        <td><input type="text" id="prodname"  minlength="5" maxlength="20" /></td>
+        </tr>
+        <!-- ... repeat as needed ... -->
+
+        <tr>
+            <td>Product manufacturing date</td>
+        <td><input type="date" id="date" value="" /></td>
+        </tr>
+
+        <tr>
+            <td>Product qty</td>
+        <td><input type="text" id="qty" value="" min="1" max="100" /></td>
+        </tr>
+
+        <tr>
+            <td><input  type="submit" value="Submit" id="s1" onclick="saveData()"/></td>
+        <td><input type="reset" value="New Product" id="np" /></td>
+        </tr>
+        </table>
+        </fieldset>
+        </form>
+    
+</body>
+</html>
