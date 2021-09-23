@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saveData(){
+            var from=document.getElementById("from1").value;
+            var to= document.getElementById("to1").value;
+            var greet= document.getElementById("greet1").value;
+            
+            localStorage.setItem("from2",from);
+            localStorage.setItem("to2",to);
+            localStorage.setItem("greet2",greet);
+        
+        }
+    
+        var s=0;
+        var f="";
+        function changefont(e)
+        {
+            f=e.options[e.selectedIndex].text;
+            alert(f);
+        }
+        function changesize(e)
+        {
+            s=e.options[e.selectedIndex].text;
+           // document.getElementById("greet1").style.fontSize=s;
+            
+        }
+        function preview()
+        {
+            document.getElementById("greet1").style.fontFamily=f;
+            document.getElementById("greet1").style.fontSize= s+"px";
+    
+        }
+    </script>
+</head>
+<body>
+    <h2>Send your Greetings!</h2>
+    
+    <form action="greet.html">
+        From:<input type="text" id="from1" value="Akshaya" placeholder="Enter from" required/>
+        <br/>
+        To:<input type="text" id="to1" placeholder="Enter from" required/>
+        <br/>
+        Greetings:
+        <br/><textarea id="greet1" placeholder="Enter your Greetings" cols="20" rows="10">abcd</textarea>
+        <br/>
+        <p id="font">Choose the Font:</p>
+        <select name="fontname" onchange="changefont(this)">
+        <option value="Calibri">Calibri</option>
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Lucida Handwriting">Lucida Handwriting</option>
+        <option value="Georgia">Georgia</option>
+        <option value="sans-serif">Sans-Serif</option> 
+         </select>
+        <br/><br/>
+        <p id="fontsize">Choose the Font Size:</p>
+        <select name="size" onchange="changesize(this)"/>
+        
+        <option>10</option>
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option>20</option>
+        </select>
+        <input type="button" value="Preview" id="bt1" onclick="preview()"/>
+        <input type="submit" value="Send" id="button1" onclick="saveData()"/>
+
+    </form>
+</body>
+</html>
