@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1" onclick="showDate()">click</p>
+    
+    <script>
+        var person={
+            firstname:"Raji",
+            lastname:"Krishna",
+            age:0,
+            
+            fullname:function(){
+                return this.firstname+" " +this.lastname;
+            },
+          
+
+        };
+
+        function showDate(){
+            d=new Date(2020,09,10);
+            var d1=new Date();
+            this.age=d1.getFullYear() - d.getFullYear();
+            return this.age;
+            //document.getElementById("p1").innerHTML = d.getFullYear();
+        }
+    document.getElementById("p1").innerHTML=person.fullname() +"<br/>";
+    
+    document.getElementById("p1").innerHTML +=showDate();
+    </script>
+</body>
+</html>

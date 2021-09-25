@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show() {
+            alert(document.querySelector("#planname").value);}
+
+        function show1(){
+
+        
+            alert(document.getElementById("d1").value);
+        
+        }
+        </script>
+</head>
+<body>
+    <label>Select Font</label>
+    <select name="planname" id="planname" onchange="show()">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier">Courier</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Palatino">Palatino</option>
+    </select>
+
+
+    <input list="fsize" name="fsize" id="d1" onchange="show1()"/>
+    <datalist id="fsize" >
+        <option value="12px">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+    </datalist>
+</body>
+</html>

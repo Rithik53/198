@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function RetrieveData()
+        {
+           var g=localStorage.getItem("greetings"); // document.writeln(localStorage.getItem("from2"));
+           // document.write(localStorage.getItem("from2")+"  has sent your greeting with the following message: \n\t  " + g + "   " + localStorage.getItem("to2"));
+            // document.writeln(localStorage.getItem("greet2"));
+            document.getElementById("t1").value=localStorage.getItem("from")+"  has sent your greeting with the following message: \n\t  " +  localStorage.getItem("to");
+            document.getElementById("greet1").value=g;
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" id="bt1" value="Read Information" onclick="RetrieveData()"/><br/>
+        <input type="text" id="t1" size=100 disabled /><br/><br/>
+        <textarea id="greet1" disabled cols="16" rows="10"></textarea>
+        
+    </form>
+</body>
+</html>
